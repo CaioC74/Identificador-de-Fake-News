@@ -53,6 +53,7 @@ As principais técnicas utilizadas ou previstas no projeto são:
 * **Aprendizado de Máquina supervisionado**
 * **Classificação de textos**
 
+## Passos Seguidos
 
 ### 1. Análise exploratória
 
