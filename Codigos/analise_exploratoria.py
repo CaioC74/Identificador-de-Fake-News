@@ -20,6 +20,9 @@ PASTA_META_TRUE = os.path.join(BASE, "true-meta-information")
 
 PASTA_GRAFICOS = "graficos"
 
+# Caso o código esteja sendo executado diretamente a partir do repositório do GitHub, alterar o caminho para:
+# PASTA_GRAFICOS = os.path.join("Documentacao", "graficos")
+
 os.makedirs(PASTA_GRAFICOS, exist_ok=True)
 
 
