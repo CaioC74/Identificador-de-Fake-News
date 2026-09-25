@@ -1,0 +1,1 @@
+# Identificador-de-Fake-News
