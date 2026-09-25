@@ -136,3 +136,5 @@ Atualmente, o projeto possui a etapa de **análise exploratória do conjunto de 
 ## Autores
 
 Projeto desenvolvido por estudantes do curso de **Ciência da Computação — Universidade Presbiteriana Mackenzie**.
+* Caio Cesar Navarro Pugliese
+* Enzo Maranho Tucilho
