@@ -35,6 +35,8 @@ https://github.com/roneysco/Fake.Br-Corpus
 
 O dataset é utilizado no projeto para as etapas de análise exploratória, preparação dos textos e treinamento dos modelos de classificação.
 
+Monteiro R.A., Santos R.L.S., Pardo T.A.S., de Almeida T.A., Ruiz E.E.S., Vale O.A. (2018) Contributions to the Study of Fake News in Portuguese: New Corpus and Automatic Detection Results. In: Villavicencio A. et al. (eds) Computational Processing of the Portuguese Language. PROPOR 2018. Lecture Notes in Computer Science, vol 11122. Springer, Cham
+
 ## Tecnologias
 
 O projeto utiliza:
