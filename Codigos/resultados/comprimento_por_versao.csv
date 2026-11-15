@@ -1,0 +1,5 @@
+versao,classe,mean,median,std
+full_texts,fake,185.7,157.0,126.4
+full_texts,true,1101.0,919.0,682.9
+size_normalized_texts,fake,182.9,157.0,115.7
+size_normalized_texts,true,184.4,158.0,116.0

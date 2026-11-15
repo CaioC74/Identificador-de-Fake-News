@@ -1,0 +1,5 @@
+modelo,size_normalized_texts,full_texts
+Naive Bayes,0.8888674512830408,0.9158309256617614
+Random Forest,0.8847079886405729,0.9680553090687428
+Regressão Logística,0.9284694280592558,0.9763877501808536
+Só comprimento (referência),0.5035,0.9382

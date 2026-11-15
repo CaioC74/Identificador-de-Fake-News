@@ -1,142 +1,158 @@
-# Identificador-de-Fake-News
+# Identificador de Fake News
 
-Projeto desenvolvido para a disciplina de **Inteligência Artificial** da Universidade Presbiteriana Mackenzie.
+Projeto da disciplina de **Inteligência Artificial** (7º semestre – Ciência da Computação) da **Universidade Presbiteriana Mackenzie**.
 
-O projeto tem como objetivo desenvolver um modelo de **Aprendizado de Máquina** capaz de analisar textos de notícias em português brasileiro e estimar a qual classe o texto está associado, com base em padrões identificados no conjunto de dados utilizado.
+Aplicação de Processamento de Linguagem Natural (PLN) e Aprendizado de Máquina que recebe o texto de uma notícia em português e estima se ela está mais associada a conteúdos **potencialmente falsos** ou **potencialmente verdadeiros**.
 
-**Importante:** o sistema não realiza uma verificação definitiva da veracidade de uma notícia. A classificação representa uma estimativa baseada nos padrões aprendidos pelo modelo a partir dos dados utilizados no treinamento.
+> ⚠️ **Aviso:** a ferramenta é um **apoio à análise** e **não verifica a veracidade** das notícias. O resultado é uma estimativa baseada em padrões de escrita aprendidos com o corpus de treinamento e pode conter erros.
 
-## Objetivos
+**Integrantes**
+- Caio Cesar Navarro Pugliese (RA 10436413)
+- Enzo Maranho Tucilho (RA 10436106)
 
-* Aplicar técnicas de **Inteligência Artificial** em um problema relacionado à disseminação de desinformação;
-* Utilizar **Processamento de Linguagem Natural (PLN)** para trabalhar com textos de notícias;
-* Aplicar técnicas de **Aprendizado de Máquina supervisionado** para classificação de textos;
-* Comparar diferentes algoritmos de classificação;
-* Avaliar o desempenho dos modelos utilizando métricas de classificação;
-* Desenvolver um protótipo para demonstrar a aplicação do modelo.
+**ODS relacionado:** ODS 16 – Paz, Justiça e Instituições Eficazes (meta 16.10 – acesso público à informação).
+
+---
+
+## Sumário
+1. [Dataset](#dataset)
+2. [Metodologia](#metodologia)
+3. [Resultados](#resultados)
+4. [Estrutura do repositório](#estrutura-do-repositório)
+5. [Como executar](#como-executar)
+6. [Uso de inteligência artificial](#uso-de-inteligência-artificial)
+7. [Referências](#referências)
+
+---
 
 ## Dataset
 
-O projeto utiliza o **Fake.Br Corpus**, um conjunto de dados composto por notícias em português brasileiro classificadas como `fake` ou `true`.
+**Fake.Br Corpus** (Monteiro et al., 2018): 7.200 notícias em português brasileiro (3.600 falsas e 3.600 verdadeiras), coletadas entre 2016 e 2018, nas categorias política, TV e celebridades, sociedade e cotidiano, ciência e tecnologia, economia e religião. Cada notícia falsa tem uma notícia verdadeira correspondente sobre o mesmo assunto (pares alinhados).
 
-O conjunto de dados utilizado possui:
+O corpus **não está neste repositório**. Ele deve ser baixado do repositório oficial: <https://github.com/roneysco/Fake.br-Corpus>
 
-* **7.200 notícias**;
-* **3.600 notícias falsas**;
-* **3.600 notícias verdadeiras**;
-* Textos em **português brasileiro**;
-* Notícias coletadas entre **2016 e 2018**;
-* Categorias como política, economia, religião, ciência e tecnologia, sociedade e cotidiano e TV e celebridades.
+São usadas duas versões:
+- `size_normalized_texts`: cada par de notícias tem tamanho semelhante. **Versão principal.**
+- `full_texts`: textos completos. Usada para comparação, porque nela as notícias verdadeiras são cerca de 6 vezes mais longas que as falsas.
 
-A base de dados não está armazenada neste repositório. Para reproduzir as análises e os experimentos, o dataset deve ser obtido diretamente em seu repositório de origem:
+## Metodologia
 
-**Fake.Br Corpus:**
-https://github.com/roneysco/Fake.Br-Corpus
-
-O dataset é utilizado no projeto para as etapas de análise exploratória, preparação dos textos e treinamento dos modelos de classificação.
-
-Monteiro R.A., Santos R.L.S., Pardo T.A.S., de Almeida T.A., Ruiz E.E.S., Vale O.A. (2018) Contributions to the Study of Fake News in Portuguese: New Corpus and Automatic Detection Results. In: Villavicencio A. et al. (eds) Computational Processing of the Portuguese Language. PROPOR 2018. Lecture Notes in Computer Science, vol 11122. Springer, Cham
-
-## Tecnologias
-
-O projeto utiliza:
-
-* **Python**
-* **Pandas**
-* **Matplotlib**
-* **Scikit-learn**
-
-## Técnicas utilizadas
-
-As principais técnicas utilizadas ou previstas no projeto são:
-
-* **Processamento de Linguagem Natural (PLN)**
-* **TF-IDF**
-* **Aprendizado de Máquina supervisionado**
-* **Classificação de textos**
-
-## Passos Seguidos
-
-### 1. Análise exploratória
-
-Inicialmente, são analisadas características do conjunto de dados, incluindo:
-
-* distribuição entre as classes `true` e `fake`;
-* distribuição das notícias por categoria;
-* distribuição das categorias entre as classes;
-* quantidade média de palavras por classe;
-* palavras mais frequentes no conjunto de dados;
-* palavras mais frequentes nas notícias `true`;
-* palavras mais frequentes nas notícias `fake`;
-* valores ausentes;
-* textos duplicados.
-
-Os gráficos gerados pela análise exploratória são armazenados na pasta `graficos/`.
-
-### 2. Preparação dos textos
-
-Os textos serão preparados para utilização nos modelos de Aprendizado de Máquina. Essa etapa inclui procedimentos de limpeza e transformação dos textos e sua representação utilizando **TF-IDF**.
-
-### 3. Treinamento
-
-Após a preparação dos dados, serão treinados diferentes modelos de classificação para comparar seu desempenho na identificação das classes `true` e `fake`.
-
-### 4. Avaliação
-
-Os modelos serão avaliados utilizando métricas de classificação.
-
-## Estrutura do projeto
-
-```text
-Fake.Br-Corpus/
-│
-├── Documentacao/
-│   ├── Artigo Parcial.pdf
-│   │
-│   └── graficos/
-│       ├── 01_distribuicao_classes.png
-│       ├── 02_distribuicao_categorias.png
-│       ├── 03_categorias_por_classe.png
-│       ├── 04_media_palavras.png
-│       ├── 05_palavras_mais_frequentes.png
-│       ├── 06_palavras_true.png
-│       └── 07_palavras_fake.png
-│
-├── analise_exploratoria.py
-├── README.md
-```
+1. **Análise exploratória:** distribuição de classes e categorias, comprimento dos textos, valores ausentes, duplicatas e palavras mais frequentes.
+2. **Preparação:** remoção do par com notícia duplicada, uso apenas dos pares presentes nas duas versões, correção de codificação e limpeza do texto (minúsculas, remoção de URLs, HTML, números, pontuação e stopwords).
+3. **Divisão por pares:** 80% treino / 20% teste, mantendo as duas notícias de um mesmo par no mesmo conjunto (evita vazamento de assunto entre treino e teste).
+4. **Representação TF-IDF** ajustada somente com os dados de treino (dentro de um `Pipeline`).
+5. **Modelos:** Naive Bayes, Regressão Logística e Random Forest, com hiperparâmetros ajustados por validação cruzada de 5 folds por pares (`GroupKFold` + `GridSearchCV`) e critério F1-score macro.
+6. **Controle do comprimento:** classificador de referência que usa apenas o número de palavras, para medir quanto do desempenho vem só do tamanho dos textos.
+7. **Protótipo** em Streamlit com o modelo escolhido.
 
 ## Resultados
 
-Os resultados serão adicionados ao repositório conforme o desenvolvimento do projeto.
+Conjunto final: 3.597 pares (7.194 notícias); treino com 2.877 pares e teste com 720 pares.
 
-Entre os resultados previstos estão:
+**Desempenho no conjunto de teste – versão normalizada (principal)**
 
-* análise exploratória do dataset;
-* comparação dos modelos de classificação;
-* métricas de avaliação;
-* matrizes de confusão;
-* análise dos resultados obtidos;
-* protótipo para classificação de novos textos.
+| Modelo | Acurácia | F1 macro | Recall (fake) | Taxa de falsos positivos |
+|---|---|---|---|---|
+| Naive Bayes | 0,889 | 0,889 | 0,903 | 0,125 |
+| **Regressão Logística** | **0,929** | **0,929** | **0,935** | **0,078** |
+| Random Forest | 0,885 | 0,885 | 0,896 | 0,126 |
 
-## ODS
+**Efeito do comprimento (F1 macro no teste)**
 
-O projeto está relacionado ao **ODS 16 – Paz, Justiça e Instituições Eficazes**, especialmente à **Meta 16.10**, relacionada ao acesso público à informação e à proteção das liberdades fundamentais.
+| Modelo | Normalizada | Completa |
+|---|---|---|
+| Só número de palavras (referência) | 0,503 | 0,938 |
+| Regressão Logística | 0,929 | 0,976 |
 
-## Limitações
+Na versão completa, o número de palavras sozinho já separa as classes (F1 de 0,938). Por isso, a versão normalizada é a estimativa mais confiável do desempenho. O modelo escolhido para o protótipo foi a **Regressão Logística sem radicalização**.
 
-O sistema não deve ser utilizado como um mecanismo definitivo de verificação de fatos.
+## Estrutura do repositório
 
-A classificação realizada pelo modelo representa uma **estimativa baseada nos padrões presentes nos dados utilizados para seu treinamento**. Dessa forma, um texto classificado como `fake` não significa necessariamente que seu conteúdo seja falso, assim como uma classificação `true` não garante a veracidade das informações apresentadas.
+```
+Identificador-de-Fake-News/
+├── Codigos/
+│   ├── analise_exploratoria.py   # análise exploratória (1º bimestre)
+│   ├── 02_modelagem.ipynb        # preparação, treinamento e avaliação
+│   ├── preprocessamento.py       # carregamento do corpus e limpeza dos textos
+│   ├── prototipo.py              # protótipo em Streamlit
+│   ├── graficos/                 # gráficos gerados pelos códigos
+│   ├── resultados/               # tabelas (CSV) com os resultados
+│   └── modelos/                  # modelo treinado (modelo_final.joblib) e metadados
+├── Documentacao/                 # artigo e demais documentos
+├── requirements.txt
+└── README.md
+```
 
-## Status do projeto
+## Como executar
 
-**Em desenvolvimento**
+**Pré-requisitos:** Python 3.10 ou superior e Git.
 
-Atualmente, o projeto possui a etapa de **análise exploratória do conjunto de dados** implementada. As próximas etapas envolvem a preparação dos textos, aplicação do TF-IDF, treinamento dos modelos, avaliação dos resultados e desenvolvimento do protótipo.
+### 1. Clonar o repositório e instalar as dependências
 
-## Autores
+```bash
+git clone https://github.com/CaioC74/Identificador-de-Fake-News.git
+cd Identificador-de-Fake-News
+pip install -r requirements.txt
+```
 
-Projeto desenvolvido por estudantes do curso de **Ciência da Computação — Universidade Presbiteriana Mackenzie**.
-* Caio Cesar Navarro Pugliese
-* Enzo Maranho Tucilho
+### 2. Baixar o corpus
+
+Baixe o Fake.Br Corpus e copie as pastas `full_texts/` e `size_normalized_texts/` para **dentro de `Codigos/`**:
+
+```bash
+git clone https://github.com/roneysco/Fake.br-Corpus.git
+```
+
+```
+Codigos/
+├── full_texts/
+├── size_normalized_texts/
+└── ...
+```
+
+Essas pastas estão no `.gitignore` e não são enviadas ao repositório.
+
+### 3. Análise exploratória (opcional)
+
+```bash
+cd Codigos
+python analise_exploratoria.py
+```
+
+Os gráficos são salvos em `Codigos/graficos/` (01 a 07).
+
+### 4. Treinamento e avaliação
+
+Abra `Codigos/02_modelagem.ipynb` no Jupyter ou no VS Code e execute todas as células (**Run All**).
+
+- Para um teste rápido, altere `RAPIDO = True` na seção 1 (grade de hiperparâmetros reduzida, alguns minutos).
+- Com `RAPIDO = False`, a execução completa leva entre 10 e 30 minutos, dependendo do computador.
+- Na primeira execução, o NLTK baixa automaticamente a lista de stopwords e o stemmer RSLP (requer internet).
+
+Saídas: gráficos 08 a 10 em `graficos/`, tabelas em `resultados/` e o modelo final em `modelos/`.
+
+### 5. Protótipo
+
+O modelo treinado já está em `Codigos/modelos/`, então o protótipo pode ser executado sem rodar o notebook:
+
+```bash
+cd Codigos
+streamlit run prototipo.py
+```
+
+O navegador abre em `http://localhost:8501`. Informe o título e o corpo da notícia e clique em **Analisar**. A tela mostra a probabilidade estimada, a classificação (potencialmente falsa, potencialmente verdadeira ou inconclusiva), as palavras que mais influenciaram a estimativa e as limitações da ferramenta. O texto digitado não é armazenado.
+
+> O modelo foi salvo com o scikit-learn 1.9.1. Use a mesma versão (já fixada no `requirements.txt`) para evitar erros ao carregá-lo.
+
+## Uso de inteligência artificial
+
+Este projeto foi desenvolvido com o auxílio de ferramentas de inteligência artificial, usadas para apoiar a escrita de código.
+
+Todo o conteúdo gerado com ajuda da IA foi revisado, testado e aprovado pela equipe, que é responsável pelas decisões do projeto e pelo resultado final.
+
+## Referências
+
+- Monteiro, R. A., Santos, R. L. S., Pardo, T. A. S., de Almeida, T. A., Ruiz, E. E. S., Vale, O. A. (2018). Contributions to the Study of Fake News in Portuguese: New Corpus and Automatic Detection Results. In: *Computational Processing of the Portuguese Language (PROPOR 2018)*. Lecture Notes in Computer Science, vol. 11122. Springer, Cham.
+- Khanam, Z., Alwasel, B. N., El-Zaart, A., Jasser, M. (2021). Fake News Detection Using Machine Learning Approaches. *IOP Conference Series: Materials Science and Engineering*, 1099(1), 012040.
+- Sharma, S., Saran, S., Patil, S. (2021). Fake News Detection using Machine Learning Algorithms. *International Journal of Engineering Research & Technology*, 9(3).
+- Ahmad, I., Yousaf, M., Yousaf, S., Ahmad, M. O. (2020). Fake News Detection Using Machine Learning Ensemble Methods. *Complexity*, 2020, 8885861.

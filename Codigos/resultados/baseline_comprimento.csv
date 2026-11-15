@@ -1,0 +1,3 @@
+versao,cv_f1_macro,cv_f1_macro_dp,teste_accuracy,teste_precision_macro,teste_recall_macro,teste_f1_macro,teste_recall_fake,teste_taxa_falso_positivo
+size_normalized_texts,0.5042,0.0029,0.5035,0.5035,0.5035,0.5035,0.5056,0.4986
+full_texts,0.9425,0.0083,0.9382,0.9383,0.9382,0.9382,0.9444,0.0681

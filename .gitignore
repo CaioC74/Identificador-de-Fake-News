@@ -1,0 +1,12 @@
+# Corpus (baixar do repositório oficial – não versionar)
+Codigos/full_texts/
+Codigos/size_normalized_texts/
+Codigos/preprocessed/
+Fake.br-Corpus/
+
+# Python / Jupyter
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.venv/
+venv/

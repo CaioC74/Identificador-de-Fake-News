@@ -1,0 +1,18 @@
+{
+  "modelo": "Regressão Logística",
+  "texto": "sem radicalização",
+  "versao_corpus": "size_normalized_texts",
+  "parametros": {
+    "clf__C": "10",
+    "tfidf__max_features": "20000",
+    "tfidf__ngram_range": "(1, 2)"
+  },
+  "cv_f1_macro": 0.9223072893320319,
+  "classes": {
+    "0": "true",
+    "1": "fake"
+  },
+  "random_state": 42,
+  "test_size": 0.2,
+  "n_folds": 5
+}
