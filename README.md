@@ -12,6 +12,10 @@ Aplicação de Processamento de Linguagem Natural (PLN) e Aprendizado de Máquin
 
 **ODS relacionado:** ODS 16 – Paz, Justiça e Instituições Eficazes (meta 16.10 – acesso público à informação).
 
+🎥 **Vídeo de apresentação**
+
+[![Vídeo de apresentação do projeto](https://img.youtube.com/vi/ID_DO_VIDEO/0.jpg)]([https://youtu.be/ID_DO_VIDEO](https://youtu.be/X-8_TtTatag))
+
 ---
 
 ## Sumário
