@@ -14,7 +14,7 @@ Aplicação de Processamento de Linguagem Natural (PLN) e Aprendizado de Máquin
 
 🎥 **Vídeo de apresentação**
 
-[![Vídeo de apresentação do projeto](https://img.youtube.com/vi/SEU_ID/hqdefault.jpg)](https://youtu.be/SEU_ID)
+[![Vídeo de apresentação do projeto](https://img.youtube.com/vi/X-8_TtTatag/hqdefault.jpg)](https://youtu.be/X-8_TtTatag)
 
 ---
 
